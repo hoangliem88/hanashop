@@ -7,9 +7,9 @@ namespace HanaShop.Model.Models
     public class Footer
     {
         [Key]
-        public string ID { get; set; }
+        public string ID { set; get; }
 
         [Required]
-        public string Content { get; set; }
+        public string Content { set; get; }
     }
 }
