@@ -55,7 +55,18 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Migrations\201804041652577_InitiaDB.cs" />
+    <Compile Include="Migrations\201804041652577_InitiaDB.Designer.cs">
+      <DependentUpon>201804041652577_InitiaDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804041706134_InitiaDB1.cs" />
+    <Compile Include="Migrations\201804041706134_InitiaDB1.Designer.cs">
+      <DependentUpon>201804041706134_InitiaDB1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ProductCategoyRepository.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -72,7 +83,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Repositories\" />
+    <EmbeddedResource Include="Migrations\201804041652577_InitiaDB.resx">
+      <DependentUpon>201804041652577_InitiaDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804041706134_InitiaDB1.resx">
+      <DependentUpon>201804041706134_InitiaDB1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
