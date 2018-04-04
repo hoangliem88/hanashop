@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using HanaShop.Model.Abstract;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HanaShop.Model.Models
 {
-    [Table("MenuGroups")]
-    public class MenuGroup
+    [Table("Pages")]
+    public class Page : Auditable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -15,6 +15,6 @@ namespace HanaShop.Model.Models
         [MaxLength(256)]
         public string Name { set; get; }
 
-        public virtual IEnumerable<Menu> Menus { set; get; }
+        public string Content { set; get; }
     }
 }

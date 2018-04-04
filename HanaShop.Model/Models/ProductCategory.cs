@@ -1,12 +1,12 @@
 ﻿using HanaShop.Model.Abstract;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Xml.Linq;
 
 namespace HanaShop.Model.Models
 {
-    [Table("Products")]
-    public class Product : Auditable
+    [Table("ProductCategoriess")]
+    public class ProductCategory: Auditable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -23,24 +23,14 @@ namespace HanaShop.Model.Models
 
         [MaxLength(500)]
         public string Image { set; get; }
-
-        public XElement MoreImage { set; get; }
-
         [Required]
         [MaxLength(500)]
         public string Description { set; get; }
 
-        public string Content { set; get; }
+        public int? ParentID { set; get; }
+        public int? DisplayOrder { set; get; }
 
-        [Required]
-        public int CategoryID { set; get; }
 
-        [ForeignKey("CategoryID")]
-        public virtual ProductCategory ProductCategory { set; get; }
-
-        public decimal Price { set; get; }
-        public decimal? Promotion { set; get; }
-        public int? Warranty { set; get; }
-        public int? ViewCount { set; get; }
+        public virtual IEnumerable<Product> Product { set; get; }
     }
 }

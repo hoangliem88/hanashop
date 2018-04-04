@@ -11,5 +11,8 @@ namespace HanaShop.Model.Abstract
         string MetaKeyword { set; get; }
         string MetaDescription { set; get; }
         bool Status { get; set; }
+
+        bool? HomeFlag { set; get; }
+        bool? HotFlag { set; get; }
     }
 }
