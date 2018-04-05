@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace HanaShop.Data.Repositories
 {
-    public interface IProductCategoyRepository
+    public interface IProductCategoyRepository : IRepository<ProductCategory>
     {
         IEnumerable<ProductCategory> GetByAlias(string alias);
     }

@@ -3,7 +3,7 @@ using HanaShop.Model.Models;
 
 namespace HanaShop.Data.Repositories
 {
-    public interface IPostTagRepository
+    public interface IPostTagRepository : IRepository<PostTag>
     {
     }
 

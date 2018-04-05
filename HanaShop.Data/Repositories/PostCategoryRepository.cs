@@ -3,7 +3,7 @@ using HanaShop.Model.Models;
 
 namespace HanaShop.Data.Repositories
 {
-    public interface IPostCategoryRepository
+    public interface IPostCategoryRepository : IRepository<PostCategory>
     {
     }
 

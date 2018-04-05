@@ -3,7 +3,7 @@ using HanaShop.Model.Models;
 
 namespace HanaShop.Data.Repositories
 {
-    public interface ISupportOnlineRepository
+    public interface ISupportOnlineRepository : IRepository<SupportOnline>
     {
     }
 

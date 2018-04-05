@@ -51,6 +51,12 @@ namespace HanaShop.Data.Infrastructure
             dataContext.Entry(entity).State = EntityState.Modified;
         }
 
+        public virtual void Delete(int id)
+        {
+            var entity = dbSet.Find(id);
+            dbSet.Remove(entity);
+        }
+
         public virtual void Delete(T entity)
         {
             dbSet.Remove(entity);
