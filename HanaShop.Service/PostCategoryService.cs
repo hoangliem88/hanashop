@@ -7,13 +7,13 @@ namespace HanaShop.Service
 {
     public interface IPostCategoryService
     {
-        void Add(PostCategory postCategory);
+        PostCategory Add(PostCategory postCategory);
 
         void Update(PostCategory postCategory);
 
-        void Delete(PostCategory postCategory);
+        PostCategory Delete(PostCategory postCategory);
 
-        void Delete(int id);
+        PostCategory Delete(int id);
 
         IEnumerable<PostCategory> GetAll();
 
@@ -35,19 +35,19 @@ namespace HanaShop.Service
             this._unitofwork = unitOfWork;
         }
 
-        public void Add(PostCategory postCategory)
+        public PostCategory Add(PostCategory postCategory)
         {
-            _postCategoryrepository.Add(postCategory);
+            return _postCategoryrepository.Add(postCategory);
         }
 
-        public void Delete(PostCategory postCategory)
+        public PostCategory Delete(PostCategory postCategory)
         {
-            _postCategoryrepository.Delete(postCategory);
+            return _postCategoryrepository.Delete(postCategory);
         }
 
-        public void Delete(int id)
+        public PostCategory Delete(int id)
         {
-            _postCategoryrepository.Delete(id);
+            return _postCategoryrepository.Delete(id);
         }
 
         public IEnumerable<PostCategory> GetAll()
