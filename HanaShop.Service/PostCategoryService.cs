@@ -21,7 +21,7 @@ namespace HanaShop.Service
 
         PostCategory GetByID(int id);
 
-        void SaveCHanges();
+        void SaveChanges();
     }
 
     public class PostCategoryService : IPostCategoryService
@@ -65,7 +65,7 @@ namespace HanaShop.Service
             return _postCategoryrepository.GetSingleByID(id);
         }
 
-        public void SaveCHanges()
+        public void SaveChanges()
         {
             _unitofwork.Commit();
         }
