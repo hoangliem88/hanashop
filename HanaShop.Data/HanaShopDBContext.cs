@@ -1,9 +1,10 @@
 ﻿using HanaShop.Model.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 
 namespace HanaShop.Data
 {
-    public class HanaShopDBContext : DbContext
+    public class HanaShopDBContext : IdentityDbContext<ApplicationUser>
     {
         public HanaShopDBContext() : base("HanaShopConnection")
         {
@@ -29,9 +30,15 @@ namespace HanaShop.Data
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
         public DbSet<Error> Errors { set; get; }
 
+        public static HanaShopDBContext Create()
+        {
+            return new HanaShopDBContext();
+        }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            
+            modelBuilder.Entity<IdentityUserRole>().HasKey(x => new { x.UserId, x.RoleId});
+            modelBuilder.Entity<IdentityUserLogin>().HasKey(x => x.UserId);
+      
         }
     }
 }

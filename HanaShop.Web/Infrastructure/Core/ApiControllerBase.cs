@@ -1,12 +1,12 @@
-﻿using HanaShop.Model.Models;
-using HanaShop.Service;
-using System;
+﻿using System;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using HanaShop.Model.Models;
+using HanaShop.Service;
 
 namespace HanaShop.Web.Infrastructure.Core
 {
@@ -42,7 +42,7 @@ namespace HanaShop.Web.Infrastructure.Core
             catch (DbUpdateException dbEx)
             {
                 LogError(dbEx);
-                response = requestMessage.CreateResponse(HttpStatusCode.BadRequest, dbEx.Message);
+                response = requestMessage.CreateResponse(HttpStatusCode.BadRequest, dbEx.InnerException.Message);
             }
             catch (Exception ex)
             {

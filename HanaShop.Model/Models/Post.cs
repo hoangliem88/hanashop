@@ -40,5 +40,7 @@ namespace HanaShop.Model.Models
         public virtual IEnumerable<PostTag> PostTags { set; get; }
 
         public int? ViewCount { set; get; }
+
+
     }
 }
